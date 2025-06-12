@@ -39,4 +39,4 @@ A weather forecasting application that allows users to check current weather con
    cd weather-app
 
 Link:
-https://vinoothna.netlify.app/Check out the Working of the project.
+https://vinoothna-m.github.io/Weather-app/ Check out the Working of the project.
