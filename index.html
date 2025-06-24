@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="theme-color" content="#0288d1"/>
+  <title>Advanced Weather App</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="icons/icon-192.png" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>🌤️ Weather App</h1>
+    <div class="search">
+      <input type="text" id="cityInput" placeholder="Enter city name" />
+      <button onclick="getWeather()">Search</button>
+      <button onclick="getLocation()">📍</button>
+    </div>
+
+    <div class="weather-section" id="currentWeather"></div>
+    <div class="sunrise-sunset" id="sunData"></div>
+    <div class="forecast" id="forecast"></div>
+  </div>
+
+  <div class="toggle">
+    <label>
+      🌗 Dark Mode
+      <input type="checkbox" id="darkToggle" onchange="toggleDarkMode()" />
+    </label>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js');
+    }
+  </script>
+</body>
+</html>
