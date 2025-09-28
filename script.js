@@ -36,6 +36,29 @@ function getWeather(city = null) {
       getForecast(cityName);
     });
 }
+// This is a simplified example. Adjust variable names as per your code.
+const weatherCondition = data.weather[0].main.toLowerCase(); // e.g., 'clear', 'rain', 'clouds'
+
+let backgroundUrl = '';
+switch(weatherCondition) {
+    case 'clear':
+        backgroundUrl = 'images/sunny.jpg';
+        break;
+    case 'rain':
+        backgroundUrl = 'images/rainy.jpg';
+        break;
+    case 'clouds':
+        backgroundUrl = 'images/cloudy.jpg';
+        break;
+    case 'snow':
+        backgroundUrl = 'images/snow.jpg';
+        break;
+    default:
+        backgroundUrl = 'images/thunder.jpg';
+}
+
+document.body.style.backgroundImage = `url('${backgroundUrl}')`;
+document.body.style.backgroundSize = 'cover'; // Make sure the image covers the whole background
 
 function getForecast(cityName) {
   fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${apiKey}&units=metric`)
@@ -92,3 +115,4 @@ function getBackgroundImage(condition) {
   };
   return images[condition] || "url('https://source.unsplash.com/1600x900/?weather')";
 }
+
